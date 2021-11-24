@@ -1,0 +1,158 @@
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  background: #dae9ee;
+  color: #0076a3;
+  font-family: "Calibri";
+}
+
+section {
+  position: relative;
+}
+section.Hidden {
+  display: none;
+}
+section .Splash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 21vmin;
+  margin: 14vmin 0;
+}
+section .Splash img {
+  height: 100%;
+  margin-right: 5%;
+}
+section .Splash .Text {
+  font-weight: 100;
+}
+section .Splash .Text * {
+  margin: 0;
+}
+section .Splash .Text h1 {
+  font-size: 21vmin;
+}
+section .Splash .Text h2 {
+  font-size: 14vmin;
+}
+section .Splash .Text h3 {
+  font-size: 7vmin;
+}
+section .Splash > * {
+  display: inline-block;
+}
+section.TitleScreen .Splash {
+  position: absolute;
+  margin: 0;
+  top: calc(50vh - 15vmin);
+  height: 30vmin;
+}
+
+.Buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Buttons h2 {
+  margin-top: 7vh;
+  font-size: 5vmin;
+}
+.Buttons .Button {
+  background-color: #00aeef;
+  color: #00212e;
+  width: 80vmin;
+  border-radius: 2vmin;
+  text-align: center;
+  font-size: 4vmin;
+  position: relative;
+  margin: 2vmin 0;
+  padding: 2vmin 0;
+  cursor: pointer;
+}
+.Buttons .Button.Dim {
+  background-color: #00212e;
+  color: #a7ccda;
+}
+.Buttons .Button.Naked {
+  background: none;
+  color: #00212e;
+}
+.Buttons .Button img {
+  position: absolute;
+  left: 25%;
+  height: 75%;
+}
+.Buttons .Button p {
+  margin: 0;
+}
+.Buttons .Button p.Small {
+  font-size: 0.5em;
+}
+
+.SignUpScreen form {
+  width: 60vmin;
+  margin-left: calc(50vw - 30vmin);
+  border: 1px dashed #f004;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10vmin;
+}
+.SignUpScreen form * {
+  display: block;
+  box-sizing: border-box;
+  margin: 1em 0;
+  height: 3em;
+  padding: 0.5em;
+  width: 100%;
+}
+
+.HomeScreen {
+  padding-top: 4em;
+}
+.HomeScreen .MenuBar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 4em;
+  background-color: #00212e;
+  color: #dae9ee;
+  display: flex;
+  justify-content: space-between;
+}
+.HomeScreen .MenuBar img {
+  height: 100%;
+}
+.HomeScreen > section {
+  max-width: 100vmin;
+  margin: 5vmin auto;
+}
+.HomeScreen .QuickActions {
+  display: flex;
+  justify-content: space-evenly;
+}
+.HomeScreen .QuickActions .ImgContainer {
+  background: #a7ccda;
+  border-radius: 2vmin;
+  width: 20vmin;
+  height: 20vmin;
+}
+.HomeScreen .QuickActions h3 {
+  text-align: center;
+  font-size: 1.5em;
+}
+.HomeScreen .Search input {
+  width: 100%;
+  padding: 0.5em;
+  font-size: 2em;
+}
+.HomeScreen .Curated h1 {
+  color: #00212e;
+  border-bottom: 2px solid #00212e;
+  font-size: 2em;
+  text-transform: uppercase;
+}
