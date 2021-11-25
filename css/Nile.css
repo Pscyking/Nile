@@ -16,13 +16,13 @@
   margin: 10vh 0;
   z-index: 10;
   transition: 300ms;
-  height: 20vmin;
+  height: 20vh;
 }
 .DynamicSplash svg {
-  width: 20vmin;
+  width: 20vh;
 }
 .DynamicSplash h1 {
-  font-size: 10vmin;
+  font-size: 10vh;
 }
 .DynamicSplash svg {
   height: 100%;
@@ -49,13 +49,13 @@
 }
 .DynamicSplash.Title {
   top: calc(50vh - 20vmin);
-  height: 40vmin;
+  height: 40vh;
 }
 .DynamicSplash.Title svg {
-  width: 40vmin;
+  width: 40vh;
 }
 .DynamicSplash.Title h1 {
-  font-size: 25vmin;
+  font-size: 25vh;
 }
 .DynamicSplash.Home {
   margin: 8vh 0;
@@ -118,10 +118,6 @@ section .Splash {
   width: 100%;
   height: 21vmin;
   margin: 14vmin 0;
-}
-section .Splash img {
-  height: 100%;
-  margin-right: 5%;
 }
 section .Splash .Text {
   font-weight: 100;
