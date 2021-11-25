@@ -2,45 +2,31 @@ jQuery(Init);
 
 function Init()
 {
-	$('body > section:not(:first-child)').addClass('Hidden');
+	$('body > section:not(:first-of-type)').addClass('Hidden');
 
-	$(document).on('keydown', HandleKeyPress);
+	AnimateLogo('Logo', 'Logo');
+	setTimeout(() => GotoPage('Welcome'), 1000);
 }
 
-function GoNext()
+let Page = 'Title';
+function GotoPage(page)
 {
-	$('body > section:not(.Hidden)')
-		.addClass('Hidden')
-		.nextOrFirstSibling()
-		.removeClass('Hidden');
-}
-
-function GoPrev()
-{
-	$('body > section:not(.Hidden)')
-		.addClass('Hidden')
-		.prevOrLastSibling()
-		.removeClass('Hidden');
-}
-
-function HandleKeyPress(e)
-{
-	const key = e.which;
-	console.log(`Key press: ${key}. Event:`);
-	console.log(e);
-	switch (key)
-	{
-		case KEY_LEFT:
-			// console.log('Left key detected');
-			GoPrev();
-			break;
-			
-		case KEY_RIGHT:
-			// console.log('Right key detected');
-			GoNext();
-			break;
+	if (page == Page) return;
+	const prev = Page;
+	Page = page;
 	
-		default:
-			break;
-	}
+	$('body > section')
+		.addClass('Hidden')
+		.filter((i,e) => $(e).hasClass(page+'Screen'))
+		.removeClass('Hidden');
+	
+	$dyn = $('.DynamicSplash')
+		.removeClass()
+		.addClass('DynamicSplash')
+		.addClass(page);
+	
+	if (page == 'Home')
+		AnimateLogo('Logo', 'Menu');
+	else if (prev == 'Home')
+		AnimateLogo('Menu', 'Logo');
 }

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="501" height="500" viewBox="0 0 501 500">
+  <defs>
+    <style>
+      .cls 0 {
+        fill: #0075a3;
+      }
+
+      .cls 0, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #00aeef;
+      }
+    </style>
+  </defs>
+  <g>
+    <path d="
+		M	0, 325
+		C	0, 325
+			75, 350
+			150, 350
+		C	225, 350
+			275, 300
+			350, 300
+		C	425, 300
+			500, 375
+			500, 375
+		C	500, 375
+			425, 350
+			350, 350
+		C	275, 350
+			225, 400
+			150, 400
+		C	75, 400
+			0, 325
+			0, 325 Z"
+			transform="translate(0.5 50)"
+			class="cls 0"/>
+    <path d="
+		M	 0, 175
+		C	 0, 175
+			75, 200
+			150, 200
+		C	225, 200
+			275, 150
+			350, 150
+		C	425, 150
+			500, 225
+			500, 225
+		C	500, 225
+			425, 200
+			350, 200
+		C	275, 200
+			225, 250
+			150, 250
+		C	75, 250
+			 0, 175
+			 0, 175 Z"
+		transform="translate(0.5 50)"
+		class="cls-2"/>
+    <path d="
+		M	0, 25
+		C	0, 25
+			75, 50
+			150, 50
+		C	225, 50
+			275, 0
+			350, 0
+		C	425, 0
+			500, 75
+			500, 75
+		C	500, 75
+			425, 50
+			350, 50
+		C	275, 50
+			225, 100
+			150, 100
+		C	75, 100
+			0, 25
+			0, 25 Z"
+		transform="translate(0.5 50)"
+		class="cls 0"/>
+  </g>
+</svg>
