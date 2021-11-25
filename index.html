@@ -6,6 +6,7 @@
 	<title>Nile</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="./js/jQueryCustom.js"></script>
+	<script src="./js/SvgTools.js"></script>
 	<script src="./js/Constants.js"></script>
 	<script src="./js/Nile.js"></script>
 
@@ -13,38 +14,44 @@
 </head>
 <body>
 
-	<section class="TitleScreen">
-		<div class="Splash">
-			<img src="./img/Logo.png" alt="">
-			<div class="Text" onclick="GoNext()">
-				<h1>NILE</h1>
-			</div>
+	<header class="DynamicSplash Title">
+		<svg id="DynamicLogo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="500" height="500" viewBox="0 0 500 500">
+			<defs>
+			  <style>
+				.cls-1 { fill: #0076a3; }
+				.cls-1, .cls-2 { fill-rule: evenodd; }
+				.cls-2 { fill: #00aeef; }
+			  </style>
+			</defs>
+			<g>
+				<path class="Top cls-1"></path>
+				<path class="Mid cls-2"></path>
+				<path class="Bot cls-1"></path>
+			</g>
+		</svg>
+		<div class="Text">
+			<h2 class="Subtitle Welcome">welcome to</h2>
+			<h1>NILE</h1>
+			<h2 class="Subtitle SignUp">sign up</h2>
+			<h2 class="Subtitle LogIn">log in</h2>
 		</div>
+	</header>
+
+	<section class="TitleScreen" onclick="GotoPage('Welcome')">
 	</section>
 	
 	<section class="WelcomeScreen">
-
-		<header>
-			<div class="Splash">
-				<img src="./img/Logo.png" alt="">
-				<div class="Text" onclick="GoNext()">
-					<h3>welcome to</h3>
-					<h2>NILE</h2>
-				</div>
-			</div>
-		</header>
-
 		<div class="Buttons">
 			
-			<div class="Button" onclick="GoNext()">LOG IN</div>
+			<div class="Button" onclick="GotoPage('Login')">LOG IN</div>
 
 			<h2>Don't have an account?</h2>
-			<div class="Button Dim">
+			<div class="Button Dim" onclick="GotoPage('SignUp')">
 				<img src="./img/Phone.png" alt="">
 				<p>SIGN UP</p>
 				<p class="Small">WITH PHONE</p>
 			</div>
-			<div class="Button Dim">
+			<div class="Button Dim" onclick="GotoPage('SignUp')">
 				<img src="./img/Email.png" alt="">
 				<p>SIGN UP</p>
 				<p class="Small">WITH EMAIL</p>
@@ -64,49 +71,34 @@
 	</section>
 	
 	<section class="SignUpScreen">
-
-		<header class="Fixed">
-			<div class="Splash">
-				<img src="./img/Logo.png" alt="">
-				<div class="Text" onclick="GoNext()">
-					<h2>NILE</h2>
-					<h3>sign up</h3>
-				</div>
-			</div>
-		</header>
-
 		<form action="Submit" method="post">
 			<input type="text" placeholder="First Name...">
 			<input type="text" placeholder="Surname...">
 			<input type="text" placeholder="Email address...">
 			<input type="text" placeholder="Phone number...">
 			<select name="City" id="SelCity">
-				<option value="Joburg">City...</option>
+				<option value="null" selected>City...</option>
 				<option value="Joburg">Joburg</option>
-				<option value="Joburg">Cape Town</option>
-				<option value="Joburg">Durban</option>
+				<option value="Cape Town">Cape Town</option>
+				<option value="Durban">Durban</option>
 			</select>
 			<input type="text" placeholder="Username (optional)...">
 			<input type="password" placeholder="Password...">
 
-			<button>CREATE ACCOUNT</button>
+			<div class="Button" onclick="GotoPage('Home')">CREATE ACCOUNT</div class="Button">
+		</form>
+	</section>
+	
+	<section class="LoginScreen">
+		<form action="Submit" method="post">
+			<input type="text" placeholder="Username, email or phone...">
+			<input type="password" placeholder="Password...">
+
+			<div class="Button" onclick="GotoPage('Home')">LOG IN</div class="Button">
 		</form>
 	</section>
 	
 	<section class="HomeScreen">
-
-		<header class="MenuBar">
-
-			<nav class="MainMenu">
-				<img src="./img/MenuIcon.png" alt="" onclick="GoNext()">
-				<h1>NILE</h1>
-			</nav>
-
-			<nav class="ProfileMenu">
-				<img src="./img/ProfileIcon.png" alt="">
-			</nav>
-
-		</header>
 
 		<section class="QuickActions">
 			<a class="QuickAction SearchNearby" href="#">
@@ -121,7 +113,7 @@
 				</div>
 				<h3>Calendar</h3>
 			</a>
-			<a class="QuickAction CreateExperience" href="#">
+			<a class="QuickAction CreateExperience" href="#" onclick="GotoPage('Create')">
 				<div class="ImgContainer">
 					<img src="./img/PlusSign.png" alt="">
 				</div>
@@ -139,6 +131,8 @@
 				<li class="Experience">
 					<div class="ImgContainer">
 						<img src="./img/Default.png" alt="">
+					</div>
+					<div class="Text">
 						<h2>Hang Gliding</h2>
 						<p class="Detail Time"><strong>This Saturday</strong> at <strong>2:00pm</strong></p>
 						<p class="Detail Price"><strong>R960</strong> per person</p>
@@ -147,6 +141,8 @@
 				<li class="Experience">
 					<div class="ImgContainer">
 						<img src="./img/Default.png" alt="">
+					</div>
+					<div class="Text">
 						<h2>Home Cooking Group</h2>
 						<p class="Detail Description">Share food, recipes and ideas.</p>
 						<p class="Detail Time"><strong>Happening now!</strong></p>
@@ -156,6 +152,8 @@
 				<li class="Experience">
 					<div class="ImgContainer">
 						<img src="./img/Default.png" alt="">
+					</div>
+					<div class="Text">
 						<h2>Super Smash Tournament</h2>
 						<p class="Detail Time"><strong>Happening now!</strong></p>
 						<p class="Detail Price"><strong>Free!</strong></p>
@@ -164,6 +162,22 @@
 			</ul>
 		</section>
 
+	</section>
+	
+	<section class="CreateScreen">
+
+		<form action="Submit" method="post">
+			<input type="text" placeholder="Title...">
+			<textarea name="Description" id="TxtDescription" cols="30" rows="10" placeholder="Describe the Experience..."></textarea>
+
+			<label for="ExpDate"><p>Date</p></label>
+			<input type="datetime" placeholder="2021/11/25">
+			
+			<label for="ExpCost"><p>Cost per Person</p></label>
+			<input type="text" placeholder="R100">
+
+			<div class="Button" onclick="GotoPage('Home')">CREATE</div>
+		</form>
 	</section>
 
 </body>
